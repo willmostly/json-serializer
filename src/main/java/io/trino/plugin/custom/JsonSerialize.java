@@ -11,18 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.trino.plugin.sample;
+package io.trino.plugin.custom;
 
 import com.google.common.collect.ImmutableSet;
 
-public class SamplePlugin
+public class JsonSerialize
         implements io.trino.spi.Plugin
 {
     @Override
     public java.util.Set<Class<?>> getFunctions()
     {
         return ImmutableSet.<Class<?>>builder()
-                .add(SampleFunctions.class)
+                .add(JsonSerializeFunction.class)
                 // Add additional UDF classes as needed
                 //.add(OtherClass.class)
                 .build();

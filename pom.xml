@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.trino</groupId>
         <artifactId>trino-root</artifactId>
-        <version>356</version>
+        <version>369</version>
     </parent>
 
     <artifactId>sample-function</artifactId>
@@ -12,6 +12,17 @@
     <packaging>trino-plugin</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>io.trino</groupId>
+            <artifactId>trino-main</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -37,12 +48,13 @@
         </dependency>
 
         <!-- for testing -->
+<!--
         <dependency>
             <groupId>io.trino</groupId>
             <artifactId>trino-main</artifactId>
             <scope>test</scope>
         </dependency>
-
+-->
         <dependency>
             <groupId>io.trino</groupId>
             <artifactId>trino-main</artifactId>
