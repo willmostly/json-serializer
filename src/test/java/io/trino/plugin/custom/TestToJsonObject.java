@@ -13,18 +13,12 @@
  */
 package io.trino.plugin.custom;
 
-import com.google.common.collect.ImmutableSet;
+import org.testng.annotations.Test;
 
-public class JsonSerialize
-        implements io.trino.spi.Plugin
+public class TestToJsonObject
 {
-    @Override
-    public java.util.Set<Class<?>> getFunctions()
+    @Test
+    public void testJsonSerialize()
     {
-        return ImmutableSet.<Class<?>>builder()
-                .add(ToJsonObject.class)
-                // Add additional UDF classes as needed
-                //.add(OtherClass.class)
-                .build();
     }
 }
