@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.trino.plugin.custom;
+package com.starburstdata.field.plugin.udf;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import io.airlift.slice.DynamicSliceOutput;
@@ -39,11 +39,11 @@ import static io.trino.util.JsonUtil.JsonGeneratorWriter.createJsonGeneratorWrit
 import static io.trino.util.JsonUtil.canCastToJson;
 import static io.trino.util.JsonUtil.createJsonGenerator;
 
-@ScalarFunction("to_json_object")
 public final class ToJsonObject
 {
     private ToJsonObject() {}
 
+    @ScalarFunction("to_json_object")
     @TypeParameter("V")
     @SqlType(StandardTypes.VARCHAR)
     public static Slice jsonSerialize(
