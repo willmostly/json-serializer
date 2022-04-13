@@ -19,19 +19,20 @@ import org.testng.annotations.Test;
 
 import static io.trino.spi.type.VarcharType.VARCHAR;
 
-public class TestToJsonObject
+public class TestToJsonObjectFunction
         extends AbstractTestFunctions
 {
     @BeforeClass
     public void setUp()
             throws Exception
     {
-        registerScalar(ToJsonObject.class);
+        registerScalar(ToJsonObjectFunction.class);
     }
 
     @Test
     public void testJsonSerialize()
     {
         assertFunction("to_json_object(Row('k1', 2, 'k2', 'banana', 'k3', ARRAY[1,2,3,44]))", VARCHAR, "{\"k1\":2,\"k2\":\"banana\",\"k3\":[1,2,3,44]}");
+        assertFunction("to_json_object(Row('k1', 2, 'k2', ROW('c1', 'banana', 'k3', ARRAY[1,2,3,44])))", VARCHAR, "{\"k1\":2,\"k2\":{\"c1\":\"banana\",\"k3\":[1,2,3,44]}}");
     }
 }
