@@ -4,11 +4,11 @@
     <parent>
         <groupId>io.trino</groupId>
         <artifactId>trino-root</artifactId>
-        <version>369</version>
+        <version>356</version>
     </parent>
 
-    <artifactId>sample-function</artifactId>
-    <description>Sample UDF Project</description>
+    <artifactId>to-json-object</artifactId>
+    <description>to-json-object UDF</description>
     <packaging>trino-plugin</packaging>
 
     <dependencies>

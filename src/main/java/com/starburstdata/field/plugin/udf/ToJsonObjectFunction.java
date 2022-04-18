@@ -80,7 +80,7 @@ public final class ToJsonObjectFunction
                         addNestedRows(jsonGenerator, t, singleRowBlock);
                     }
                     else {
-                        createJsonGeneratorWriter(t, false).writeJsonValue(jsonGenerator, row, index);
+                        createJsonGeneratorWriter(t).writeJsonValue(jsonGenerator, row, index);
                     }
                 }
                 index++;
